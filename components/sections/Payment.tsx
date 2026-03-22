@@ -15,9 +15,12 @@ export default function Payment() {
   return (
     <section
       id="payment"
-      className="px-6 py-16 md:px-20 md:py-[100px] max-w-[1100px] mx-auto"
+      className="px-6 py-16 md:px-20 md:py-[100px] max-w-[1100px] mx-auto relative"
     >
-      <motion.div {...reveal} className="text-center mb-14">
+      {/* Subtle honeycomb background */}
+      <div className="absolute -inset-10 honeycomb-bg opacity-20 pointer-events-none" />
+
+      <motion.div {...reveal} className="text-center mb-14 relative z-[1]">
         <SectionLabel centered>{PAYMENT_COPY.label}</SectionLabel>
         <h2 className="font-display text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.2] text-brown">
           {PAYMENT_COPY.title}
@@ -26,49 +29,50 @@ export default function Payment() {
 
       <motion.div
         {...reveal}
-        className="grid grid-cols-1 md:grid-cols-2 gap-7"
+        className="grid grid-cols-1 md:grid-cols-2 gap-7 relative z-[1]"
       >
         {/* Cash Card */}
-        <div className="bg-white-warm rounded-3xl p-10 shadow-[0_4px_32px_rgba(58,34,16,0.08)] border border-amber/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_48px_rgba(58,34,16,0.14)]">
-          <span className="text-[2.2rem] block mb-4">{"\u{1F4B5}"}</span>
-          <div className="font-display text-[1.4rem] font-semibold text-brown mb-2">
+        <div className="bg-white-warm rounded-3xl p-10 shadow-warm border border-amber/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-warm-lg group relative overflow-hidden">
+          {/* Subtle glow on hover */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,192,64,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+          <span className="text-[2.8rem] block mb-4 transition-transform duration-300 group-hover:scale-110 relative z-[1]">
+            {"\u{1F4B5}"}
+          </span>
+          <div className="font-display text-[1.4rem] font-semibold text-brown mb-2 relative z-[1]">
             {PAYMENT_COPY.cash.title}
           </div>
-          <span className="inline-block bg-green-600/[0.12] text-green-800 font-sans text-[0.73rem] font-semibold tracking-[0.06em] uppercase px-2.5 py-[3px] rounded-[20px] mb-4">
+          <span className="inline-block bg-green-600/[0.12] text-green-800 font-sans text-[0.73rem] font-semibold tracking-[0.06em] uppercase px-2.5 py-[3px] rounded-[20px] mb-4 relative z-[1]">
             Preferred
           </span>
-          <p className="text-[0.92rem] leading-[1.75] text-text-soft">
-            Bring the exact amount when you come to collect. Exact change
-            appreciated &mdash; <strong>$30</strong> for one tub,{" "}
-            <strong>$50</strong> for two. Just text us first to arrange a
-            time.
+          <p className="text-[0.92rem] leading-[1.75] text-text-soft relative z-[1]">
+            {PAYMENT_COPY.cash.body}
           </p>
         </div>
 
         {/* Bank Transfer Card */}
-        <div className="bg-white-warm rounded-3xl p-10 shadow-[0_4px_32px_rgba(58,34,16,0.08)] border border-amber/10 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_48px_rgba(58,34,16,0.14)]">
-          <span className="text-[2.2rem] block mb-4">{"\u{1F3E6}"}</span>
-          <div className="font-display text-[1.4rem] font-semibold text-brown mb-2">
+        <div className="bg-white-warm rounded-3xl p-10 shadow-warm border border-amber/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-warm-lg group relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,192,64,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+          <span className="text-[2.8rem] block mb-4 transition-transform duration-300 group-hover:scale-110 relative z-[1]">
+            {"\u{1F3E6}"}
+          </span>
+          <div className="font-display text-[1.4rem] font-semibold text-brown mb-2 relative z-[1]">
             {PAYMENT_COPY.bank.title}
           </div>
-          <p className="text-[0.92rem] leading-[1.75] text-text-soft">
-            Transfer before pickup and send us a screenshot of your proof of
-            payment via text to <strong>{BUSINESS.phone}</strong>.
-            We&apos;ll confirm once received.
+          <p className="text-[0.92rem] leading-[1.75] text-text-soft relative z-[1]">
+            {PAYMENT_COPY.bank.body}
           </p>
 
-          <div className="space-y-2.5 mt-4">
+          <div className="space-y-2.5 mt-5 relative z-[1]">
             {[
               { label: "BSB", value: BUSINESS.bsb },
               { label: "Account Number", value: BUSINESS.accountNumber },
-              {
-                label: "Reference",
-                value: BUSINESS.paymentReference,
-              },
+              { label: "Reference", value: BUSINESS.paymentReference },
             ].map((detail) => (
               <div
                 key={detail.label}
-                className="bg-cream rounded-xl px-5 py-4 font-sans"
+                className="bg-cream rounded-xl px-5 py-4 font-sans border border-amber/[0.08] transition-all duration-200 hover:border-amber/20"
               >
                 <span className="text-[0.72rem] font-medium text-amber tracking-[0.08em] uppercase block mb-0.5">
                   {detail.label}

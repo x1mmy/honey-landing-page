@@ -1,0 +1,6 @@
+# Hive & Harvest - Pure Australian Honey
+User-agent: *
+Allow: /
+
+# Sitemap (update URL when domain is configured)
+# Sitemap: https://yourdomain.com/sitemap.xml

@@ -15,43 +15,47 @@ export default function Shop() {
   return (
     <section
       id="shop"
-      className="bg-brown px-6 py-20 md:px-20 md:py-[100px] relative overflow-hidden"
+      className="bg-brown px-6 py-20 md:px-20 md:py-[100px] relative overflow-hidden honey-drip"
     >
       {/* Ambient glow */}
-      <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(245,192,64,0.07)_0%,transparent_65%)] pointer-events-none" />
+      <div className="absolute top-[-150px] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle,rgba(245,192,64,0.1)_0%,transparent_65%)] pointer-events-none" />
+
+      {/* Honeycomb pattern */}
+      <div className="absolute inset-0 honeycomb-bg opacity-15 pointer-events-none" />
 
       {/* Header */}
-      <motion.div {...reveal} className="text-center mb-16">
-        <SectionLabel centered>The Shop</SectionLabel>
+      <motion.div {...reveal} className="text-center mb-16 relative z-[1]">
+        <SectionLabel centered>The Honey Shop</SectionLabel>
         <h2 className="font-display text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.2] text-white-warm mb-4">
-          Pick your tub.
+          Grab yours before it&apos;s gone.
         </h2>
         <p className="font-sans text-[0.85rem] text-white-warm/[0.65] max-w-[480px] mx-auto">
-          Simple pricing. Stock is limited &mdash; grab yours before
-          it&apos;s gone.
+          Small-batch, limited supply. Each tub is packed fresh and sold until the batch runs out.
         </p>
       </motion.div>
 
       {/* Product Cards */}
       <motion.div
         {...reveal}
-        className="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-[380px] md:max-w-[800px] mx-auto mb-16"
+        className="grid grid-cols-1 md:grid-cols-2 gap-7 max-w-[380px] md:max-w-[800px] mx-auto mb-16 relative z-[1]"
       >
         {PRODUCTS.map((product) => (
           <div
             key={product.id}
-            className={`relative rounded-3xl p-10 text-center transition-all duration-300 cursor-pointer overflow-hidden ${
+            className={`relative rounded-3xl p-10 text-center transition-all duration-300 cursor-pointer overflow-hidden group ${
               product.featured
-                ? "bg-amber border border-amber hover:bg-[#D4820A] hover:border-[#D4820A]"
-                : "bg-white-warm/[0.06] border border-honey/20 hover:-translate-y-1.5 hover:bg-white-warm/10 hover:border-honey/50"
+                ? "bg-gradient-honey border border-honey/30 hover:shadow-honey-lg"
+                : "bg-white-warm/[0.06] border border-honey/20 hover:-translate-y-1.5 hover:bg-white-warm/10 hover:border-honey/50 hover:shadow-honey"
             }`}
           >
             {product.badge && (
-              <span className="absolute top-4 right-4 bg-honey text-brown font-sans text-[0.72rem] font-bold tracking-[0.05em] uppercase px-3 py-1 rounded-[20px]">
+              <span className="absolute top-4 right-4 bg-honey text-brown font-sans text-[0.72rem] font-bold tracking-[0.05em] uppercase px-3 py-1 rounded-[20px] golden-shimmer">
                 {product.badge}
               </span>
             )}
-            <span className="text-[3.5rem] block mb-5">{product.icon}</span>
+            <span className="text-[3.5rem] block mb-5 transition-transform duration-300 group-hover:scale-110">
+              {product.icon}
+            </span>
             <div
               className={`font-display text-2xl font-bold mb-2 ${
                 product.featured ? "text-brown" : "text-white-warm"
@@ -89,10 +93,20 @@ export default function Shop() {
         ))}
       </motion.div>
 
+      {/* How to Order */}
+      <motion.div {...reveal} className="text-center mb-10 relative z-[1]">
+        <h3 className="font-display text-xl font-semibold text-white-warm mb-2">
+          How to order
+        </h3>
+        <p className="font-sans text-[0.8rem] text-white-warm/50">
+          Four simple steps. No app needed.
+        </p>
+      </motion.div>
+
       {/* Order Steps */}
       <motion.div
         {...reveal}
-        className="flex flex-col md:flex-row justify-center max-w-[900px] mx-auto"
+        className="flex flex-col md:flex-row justify-center max-w-[900px] mx-auto relative z-[1]"
       >
         {ORDER_STEPS.map((step, i) => (
           <div
@@ -104,7 +118,7 @@ export default function Shop() {
                 &rarr;
               </span>
             )}
-            <div className="w-12 h-12 rounded-full border-[1.5px] border-honey/35 flex items-center justify-center mx-auto mb-4 font-display text-[1.1rem] text-honey font-semibold">
+            <div className="w-12 h-12 rounded-full border-[1.5px] border-honey/35 flex items-center justify-center mx-auto mb-4 font-display text-[1.1rem] text-honey font-semibold transition-all duration-300 hover:bg-honey/10 hover:border-honey/60">
               {step.step}
             </div>
             <div className="font-display text-base text-white-warm mb-2">

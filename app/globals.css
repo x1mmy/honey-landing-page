@@ -13,7 +13,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Noise texture overlay */
+/* Subtle noise texture overlay for organic feel */
 body::before {
   content: '';
   position: fixed;
@@ -21,10 +21,10 @@ body::before {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 0;
-  opacity: 0.4;
+  opacity: 0.35;
 }
 
-/* Pulse animation for green dot */
+/* Pulse animation for availability dot */
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.6; transform: scale(0.85); }
@@ -32,4 +32,130 @@ body::before {
 
 .animate-pulse-dot {
   animation: pulse 2s infinite;
+}
+
+/* Honeycomb SVG pattern background */
+.honeycomb-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66L28 100' fill='none' stroke='%23C8760A' stroke-width='0.5' opacity='0.08'/%3E%3Cpath d='M28 0L28 34L0 50L0 84L28 100L56 84L56 50L28 34' fill='none' stroke='%23F5C040' stroke-width='0.3' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Honey drip divider */
+.honey-drip {
+  position: relative;
+}
+
+.honey-drip::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,0 150,0 200,0 C250,0 250,0 300,0 L300,6 C300,18 310,30 320,34 C324,36 326,40 326,40 L326,40 C326,40 328,36 332,34 C342,30 352,18 352,6 L352,0 C400,0 450,0 500,0 C550,0 600,0 650,0 L650,4 C650,14 658,24 666,28 C670,30 672,36 672,36 C672,36 674,30 678,28 C686,24 694,14 694,4 L694,0 C750,0 800,0 900,0 C950,0 1000,0 1050,0 L1050,8 C1050,20 1058,28 1066,32 C1070,34 1072,38 1072,38 C1072,38 1074,34 1078,32 C1086,28 1094,20 1094,8 L1094,0 L1200,0 L1200,0 L0,0Z' fill='%23FBF4E4'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: 100% 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Golden shimmer animation for highlights */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.golden-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(245, 192, 64, 0.15) 25%,
+    rgba(245, 192, 64, 0.3) 50%,
+    rgba(245, 192, 64, 0.15) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Floating animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out 2s infinite;
+}
+
+/* Gentle golden glow effect */
+.golden-glow {
+  box-shadow:
+    0 0 40px rgba(245, 192, 64, 0.15),
+    0 0 80px rgba(245, 192, 64, 0.08),
+    0 0 120px rgba(200, 118, 10, 0.05);
+}
+
+/* Warm gradient text */
+.text-gradient-honey {
+  background: linear-gradient(135deg, #C8760A 0%, #F5C040 50%, #C8760A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Honey drip from brown sections */
+.honey-drip-brown::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40' preserveAspectRatio='none'%3E%3Cpath d='M0,0 C150,0 150,0 200,0 C250,0 250,0 300,0 L300,6 C300,18 310,30 320,34 C324,36 326,40 326,40 L326,40 C326,40 328,36 332,34 C342,30 352,18 352,6 L352,0 C400,0 450,0 500,0 C550,0 600,0 650,0 L650,4 C650,14 658,24 666,28 C670,30 672,36 672,36 C672,36 674,30 678,28 C686,24 694,14 694,4 L694,0 C750,0 800,0 900,0 C950,0 1000,0 1050,0 L1050,8 C1050,20 1058,28 1066,32 C1070,34 1072,38 1072,38 C1072,38 1074,34 1078,32 C1086,28 1094,20 1094,8 L1094,0 L1200,0 L1200,0 L0,0Z' fill='%233A2210'/%3E%3C/svg%3E") no-repeat bottom center;
+  background-size: 100% 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Staggered entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(245, 192, 64, 0.3);
+  color: #3A2210;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBF4E4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8760A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3A2210;
 }

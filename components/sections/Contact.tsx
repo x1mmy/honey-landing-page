@@ -15,9 +15,18 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-cream-dark px-6 py-16 md:px-20 md:py-20 text-center border-t border-amber/[0.12]"
+      className="relative px-6 py-16 md:px-20 md:py-24 text-center overflow-hidden"
     >
-      <motion.div {...reveal} className="max-w-[560px] mx-auto">
+      {/* Warm gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-cream-dark via-cream-dark to-cream pointer-events-none" />
+
+      {/* Honeycomb pattern */}
+      <div className="absolute inset-0 honeycomb-bg opacity-25 pointer-events-none" />
+
+      {/* Ambient golden glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(245,192,64,0.12)_0%,transparent_60%)] pointer-events-none" />
+
+      <motion.div {...reveal} className="max-w-[560px] mx-auto relative z-[1]">
         <SectionLabel centered>{CONTACT_COPY.label}</SectionLabel>
         <h2 className="font-display text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.2] text-brown mb-4">
           {CONTACT_COPY.title}
@@ -25,20 +34,38 @@ export default function Contact() {
         <p className="text-base leading-[1.8] text-text-soft mb-9">
           {CONTACT_COPY.body}
         </p>
-        <a
-          href={BUSINESS.phoneHref}
-          className="inline-block font-display text-[2.4rem] font-bold text-amber transition-colors duration-200 hover:text-brown"
-          aria-label={`Call or text ${BUSINESS.phone} to order`}
-        >
-          {BUSINESS.phone}
-        </a>
-        <p className="mt-4 font-sans text-[0.83rem] text-text-soft">
+
+        {/* Phone CTA with golden glow */}
+        <div className="relative inline-block">
+          <div className="absolute -inset-4 bg-[radial-gradient(circle,rgba(245,192,64,0.2)_0%,transparent_70%)] rounded-full pointer-events-none" />
+          <a
+            href={BUSINESS.phoneHref}
+            className="relative inline-block font-display text-[2.4rem] font-bold text-gradient-honey transition-all duration-300 hover:scale-105"
+            aria-label={`Call or text ${BUSINESS.phone} to order honey`}
+          >
+            {BUSINESS.phone}
+          </a>
+        </div>
+
+        <p className="mt-5 font-sans text-[0.83rem] text-text-soft">
           {CONTACT_COPY.note}
         </p>
-        <div className="inline-flex items-center gap-2 mt-7 bg-white-warm rounded-full px-6 py-3 font-sans text-[0.85rem] text-brown-mid shadow-[0_4px_16px_rgba(58,34,16,0.08)]">
+
+        <div className="inline-flex items-center gap-2 mt-7 bg-white-warm rounded-full px-6 py-3 font-sans text-[0.85rem] text-brown-mid shadow-warm border border-amber/[0.08]">
           {"\u{1F4CD}"} Pickup available in{" "}
           <strong>{BUSINESS.location}</strong>
         </div>
+
+        {/* Urgency nudge */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-6 font-sans text-[0.78rem] text-amber font-medium italic"
+        >
+          Limited batches &mdash; once they&apos;re gone, they&apos;re gone
+        </motion.p>
       </motion.div>
     </section>
   );
