@@ -1,22 +1,44 @@
 export const BUSINESS = {
   name: "Hive & Harvest",
-  tagline: "Nature's Liquid Gold, Straight From the Hive",
-  phone: "0493 324 958",
-  phoneHref: "tel:0493324958",
+  tagline: "Nature\u2019s Liquid Gold, Direct From the Farm",
+  phone: "0432 806 679",
+  phoneHref: "sms:0432806679",
   location: "Merrylands, NSW",
+  farmLocation: "Tamworth, NSW",
   bsb: "732-361",
   accountNumber: "880 801",
   paymentReference: "Your name + HONEY",
+} as const;
+
+export const HONEY_INFO = {
+  name: "Sandy Hills Honey",
+  farm: "965-acre farm, 45km south-east of Tamworth in North West NSW",
+  type: "Pure Eucalyptus Honey",
+  source: "Collected from the nectar of all bush trees",
+  highlights: [
+    "Cold extracted",
+    "Hand poured",
+    "Unadulterated",
+    "100% Australian",
+  ],
+  promises: [
+    { icon: "\u274C", text: "No additives" },
+    { icon: "\u274C", text: "No preservatives" },
+    { icon: "\u274C", text: "No heat treatment" },
+    { icon: "\u274C", text: "No chemicals used" },
+    { icon: "\u274C", text: "No sugar fed to bees" },
+  ],
+  legacy: "The whole process is done by hand, the same way the farmer\u2019s family has done for over 60 years.",
+  certification: "100% Australian natural raw product. Product of Australia.",
 } as const;
 
 export const PRODUCTS = [
   {
     id: "single",
     label: "1 Tub",
-    icon: "\u{1F36F}",
     price: 30,
     description:
-      "Thick, golden, and bursting with flavour. One generous tub of raw Australian honey \u2014 perfect for drizzling over toast, stirring into tea, or eating straight off the spoon.",
+      "One generous tub of Sandy Hills pure eucalyptus honey \u2014 cold extracted, hand poured, and bursting with rich, golden flavour. Perfect for drizzling, cooking, or eating straight off the spoon.",
     featured: false,
     saving: null,
     badge: null,
@@ -25,12 +47,11 @@ export const PRODUCTS = [
   {
     id: "double",
     label: "2 Tubs",
-    icon: "\u{1F36F}\u{1F36F}",
     price: 50,
     priceEach: 25,
     saving: 10,
     description:
-      "Double the sweetness. Keep one on the counter and one in reserve \u2014 because once you open the first, it won\u2019t last long. Save $10 when you grab two.",
+      "Double the goodness. Keep one on the counter and gift the other \u2014 or stock up, because once you open the first tub, it won\u2019t last long. Save $10 when you grab two.",
     featured: true,
     badge: "Best Value",
     priceNote: "Save $10 \u2014 only $25 each",
@@ -46,7 +67,7 @@ export const ORDER_STEPS = [
   {
     step: 2,
     title: "Text us",
-    desc: "Send a quick message to 0493 324 958 with your name & order",
+    desc: "Send a quick SMS to 0432 806 679 with your name & order",
   },
   {
     step: 3,
@@ -61,34 +82,37 @@ export const ORDER_STEPS = [
 ] as const;
 
 export const TRUST_ITEMS = [
-  { icon: "\u{1F33F}", label: "100% Organic" },
-  { icon: "\u{1F41D}", label: "Aussie-Farmed" },
-  { icon: "\u2728", label: "Zero Preservatives" },
-  { icon: "\u{1F3E1}", label: "Local Pickup \u00B7 Merrylands" },
+  { icon: "\u{1F33F}", label: "100% Organic & Raw" },
+  { icon: "\u{1F41D}", label: "Pure Eucalyptus" },
+  { icon: "\u2728", label: "Zero Chemicals" },
+  { icon: "\u{1F3E1}", label: "965-Acre Tamworth Farm" },
+  { icon: "\u{270B}", label: "Handmade for 60+ Years" },
 ] as const;
 
 export const ABOUT_PILLS = [
-  "\u{1F1E6}\u{1F1FA} Locally Sourced",
-  "\u{1F33F} 100% Organic",
-  "\u2705 No Additives",
+  "\u{1F1E6}\u{1F1FA} Product of Australia",
+  "\u{1F33F} Cold Extracted",
+  "\u{270B} Hand Poured",
   "\u{1F36F} Raw & Unfiltered",
+  "\u274C No Chemicals",
 ] as const;
 
 export const HERO_COPY = {
-  badge: "Small-Batch Australian Honey",
+  badge: "Sandy Hills Honey \u2022 Pure Eucalyptus",
   titleLine1: "Taste the",
   titleEmphasis: "Difference",
   titleLine2: "Real Honey Makes.",
   subtitle:
-    "Thick, golden, and impossibly smooth \u2014 this isn\u2019t supermarket honey. Harvested from Australian hives, untouched by preservatives, and delivered to your hands the way bees intended.",
+    "Cold extracted and hand poured from a 965-acre family farm near Tamworth. No additives, no preservatives, no heat treatment \u2014 just pure, raw eucalyptus honey the way nature intended. Handmade the same way for over 60 years.",
 } as const;
 
 export const ABOUT_COPY = {
-  label: "Our Story",
-  title: "From the hive to your table \u2014 nothing in between.",
+  label: "The Honey",
+  title: "From a 965-acre farm to your table \u2014 nothing in between.",
   paragraphs: [
-    "We tasted real honey for the first time and everything changed. The richness, the floral notes, the thick golden texture that coats your spoon \u2014 it was nothing like the watered-down stuff on supermarket shelves.",
-    "We couldn\u2019t keep it to ourselves. Now we bring this same small-batch, preservative-free honey to families across Western Sydney. Every tub is raw, unfiltered, and packed with natural goodness \u2014 the kind of honey your grandparents grew up on.",
+    "Sandy Hills Honey is collected from the nectar of all bush trees on a 965-acre farm, 45km south-east of Tamworth in North West NSW. This isn\u2019t mass-produced honey \u2014 it\u2019s cold extracted, hand poured, and completely unadulterated.",
+    "No additives. No preservatives. Not heat treated. No sugar fed to the bees. No chemicals used \u2014 ever. This is pure, natural, raw honey where the whole process is done by hand, the same way the farmer\u2019s family has been doing it for over 60 years.",
+    "We bring this same incredible honey straight to you in Merrylands. Once you taste the difference, you\u2019ll never go back to supermarket honey.",
   ],
 } as const;
 
@@ -102,13 +126,21 @@ export const PAYMENT_COPY = {
   },
   bank: {
     title: "Bank Transfer",
-    body: "Transfer before pickup and text us a screenshot to 0493 324 958. We\u2019ll confirm the moment it lands.",
+    body: "Transfer before pickup and text us a screenshot to 0432 806 679. We\u2019ll confirm the moment it lands.",
   },
 } as const;
 
 export const CONTACT_COPY = {
   label: "Don\u2019t Miss Out",
   title: "Your tub is waiting.",
-  body: "Each batch is limited. Text us now to reserve yours before it\u2019s gone \u2014 we\u2019ll sort out a pickup time that works for you.",
-  note: "Just text your name + how many tubs. That\u2019s it.",
+  body: "Each batch comes direct from the farm and stock is limited. Text us now to reserve yours before it\u2019s gone \u2014 we\u2019ll sort out a pickup time that works for you.",
+  note: "Just SMS your name + how many tubs. That\u2019s it.",
+} as const;
+
+export const IMAGES = {
+  label: "/images/label.jpg",
+  honeycomb: "/images/honeycomb.jpg",
+  hills: "/images/hills.jpg",
+  tubs: "/images/tubs.jpg",
+  farm: "/images/farm.jpg",
 } as const;

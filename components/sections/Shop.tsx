@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { PRODUCTS, ORDER_STEPS } from "@/lib/content";
+import { PRODUCTS, ORDER_STEPS, IMAGES, HONEY_INFO } from "@/lib/content";
 
 const reveal = {
   initial: { opacity: 0, y: 30 },
@@ -29,9 +30,29 @@ export default function Shop() {
         <h2 className="font-display text-[clamp(2rem,3vw,3rem)] font-bold leading-[1.2] text-white-warm mb-4">
           Grab yours before it&apos;s gone.
         </h2>
-        <p className="font-sans text-[0.85rem] text-white-warm/[0.65] max-w-[480px] mx-auto">
-          Small-batch, limited supply. Each tub is packed fresh and sold until the batch runs out.
+        <p className="font-sans text-[0.85rem] text-white-warm/[0.65] max-w-[520px] mx-auto">
+          {HONEY_INFO.name} &mdash; {HONEY_INFO.type.toLowerCase()}, {HONEY_INFO.source.toLowerCase()} on a {HONEY_INFO.farm}. Limited supply, packed fresh each batch.
         </p>
+      </motion.div>
+
+      {/* Product image banner */}
+      <motion.div {...reveal} className="relative h-[160px] md:h-[220px] rounded-2xl overflow-hidden mb-12 max-w-[800px] mx-auto shadow-honey relative z-[1]">
+        <Image
+          src={IMAGES.tubs}
+          alt="Fresh batch of Sandy Hills Honey tubs ready for pickup"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 800px"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brown/60 via-transparent to-transparent" />
+        <div className="absolute bottom-4 left-6 md:bottom-6 md:left-8">
+          <span className="font-display text-white-warm text-lg md:text-xl font-bold drop-shadow-lg">
+            {HONEY_INFO.name}
+          </span>
+          <span className="block font-sans text-white-warm/70 text-[0.75rem] mt-0.5">
+            Fresh harvested &bull; Raw &bull; Organic
+          </span>
+        </div>
       </motion.div>
 
       {/* Product Cards */}
@@ -54,7 +75,7 @@ export default function Shop() {
               </span>
             )}
             <span className="text-[3.5rem] block mb-5 transition-transform duration-300 group-hover:scale-110">
-              {product.icon}
+              {product.id === "single" ? "\u{1F36F}" : "\u{1F36F}\u{1F36F}"}
             </span>
             <div
               className={`font-display text-2xl font-bold mb-2 ${
@@ -99,7 +120,7 @@ export default function Shop() {
           How to order
         </h3>
         <p className="font-sans text-[0.8rem] text-white-warm/50">
-          Four simple steps. No app needed.
+          Four simple steps. Just text us.
         </p>
       </motion.div>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { BUSINESS } from "@/lib/content";
 
 const NAV_LINKS = [
-  { label: "Our Story", href: "#about" },
+  { label: "The Honey", href: "#about" },
   { label: "Shop", href: "#shop" },
   { label: "Payment", href: "#payment" },
   { label: "Contact", href: "#contact" },
@@ -21,7 +21,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on resize
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) setMobileOpen(false);
@@ -30,7 +29,6 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when mobile menu open
   useEffect(() => {
     if (mobileOpen) {
       document.body.style.overflow = "hidden";
@@ -49,7 +47,6 @@ export default function Navbar() {
           scrolled ? "shadow-warm" : ""
         }`}
       >
-        {/* Logo */}
         <Link href="#" className="font-display text-xl font-bold text-brown tracking-[0.02em]">
           Hive <span className="text-gradient-honey">&amp;</span> Harvest
         </Link>
@@ -68,7 +65,7 @@ export default function Navbar() {
           <Link
             href="#contact"
             className="font-sans text-[0.85rem] font-medium text-white-warm bg-gradient-honey px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-honey hover:-translate-y-px"
-            aria-label={`Order now - call ${BUSINESS.phone}`}
+            aria-label={`Order now - SMS ${BUSINESS.phone}`}
           >
             Order Now
           </Link>
@@ -127,7 +124,7 @@ export default function Navbar() {
             href={BUSINESS.phoneHref}
             className="mt-2 font-sans text-sm text-text-soft"
           >
-            {"\u{1F4DE}"} {BUSINESS.phone}
+            {"\u{1F4AC}"} SMS {BUSINESS.phone}
           </a>
         </div>
       )}
