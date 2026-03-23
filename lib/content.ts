@@ -138,9 +138,9 @@ export const CONTACT_COPY = {
 } as const;
 
 export const IMAGES = {
-  label: "/images/label.jpg",
-  honeycomb: "/images/honeycomb.jpg",
-  hills: "/images/hills.jpg",
-  tubs: "/images/tubs.jpg",
-  farm: "/images/farm.jpg",
+  honeycomb: "/images/honeycomb.png",
+  tubs: "/images/tubs.png",
+  farm: "/images/farm.png",
+  bees: "/images/bees.png",
+  harvest: "/images/harvest.png",
 } as const;

@@ -26,22 +26,22 @@ export default function About() {
           {/* Honeycomb pattern behind images */}
           <div className="absolute -inset-8 honeycomb-bg opacity-30 rounded-3xl pointer-events-none" />
 
-          {/* Main image — farm landscape */}
+          {/* Main image — farm property */}
           <div className="w-[72%] h-full rounded-[20px] overflow-hidden shadow-warm-xl relative golden-glow">
             <Image
-              src={IMAGES.hills}
-              alt="Rolling hills and eucalyptus bush near Tamworth NSW where Sandy Hills Honey is harvested"
+              src={IMAGES.farm}
+              alt="Lush green paddocks and eucalyptus trees on the Sandy Hills farm property near Tamworth NSW"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 70vw, 35vw"
             />
           </div>
 
-          {/* Overlapping secondary image — honeycomb */}
+          {/* Overlapping secondary image — honeycomb frame */}
           <div className="absolute right-0 bottom-10 w-[52%] h-[55%] rounded-2xl overflow-hidden shadow-warm-lg border-[5px] border-cream">
             <Image
               src={IMAGES.honeycomb}
-              alt="Beekeeper holding a frame of fresh honeycomb with bees on a sunny day at the Sandy Hills farm"
+              alt="Golden honeycomb frame full of pure eucalyptus honey with bees at the Sandy Hills apiary"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 50vw, 25vw"
@@ -120,8 +120,8 @@ export default function About() {
       >
         <div className="relative h-[180px] md:h-[240px] rounded-2xl overflow-hidden shadow-warm">
           <Image
-            src={IMAGES.farm}
-            alt="Lush green paddocks on the Sandy Hills farm property near Tamworth NSW"
+            src={IMAGES.bees}
+            alt="Bees flying into their hive on a warm day at the Sandy Hills farm"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 50vw, 33vw"
@@ -129,8 +129,8 @@ export default function About() {
         </div>
         <div className="relative h-[180px] md:h-[240px] rounded-2xl overflow-hidden shadow-warm">
           <Image
-            src={IMAGES.tubs}
-            alt="Freshly packed tubs of Sandy Hills raw eucalyptus honey ready for sale"
+            src={IMAGES.harvest}
+            alt="Beekeeper hand-extracting fresh honeycomb from the hive at Sandy Hills"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 50vw, 33vw"
@@ -138,8 +138,8 @@ export default function About() {
         </div>
         <div className="relative h-[180px] md:h-[240px] rounded-2xl overflow-hidden shadow-warm col-span-2 md:col-span-1">
           <Image
-            src={IMAGES.label}
-            alt="Sandy Hills Honey product label showing 100% Australian natural raw product certification"
+            src={IMAGES.tubs}
+            alt="Freshly packed tubs of Sandy Hills raw eucalyptus honey ready for sale"
             fill
             className="object-cover hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, 33vw"
