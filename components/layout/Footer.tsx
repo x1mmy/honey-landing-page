@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { BUSINESS } from "@/lib/content";
+import { BUSINESS, HONEY_INFO } from "@/lib/content";
 
 const FOOTER_LINKS = [
-  { label: "Our Story", href: "#about" },
+  { label: "The Honey", href: "#about" },
   { label: "Shop", href: "#shop" },
   { label: "Payment", href: "#payment" },
   { label: "Contact", href: "#contact" },
@@ -25,7 +25,7 @@ export default function Footer() {
               Hive <span className="text-honey">&amp;</span> Harvest
             </div>
             <p className="font-sans text-[0.82rem] text-white-warm/40 leading-relaxed max-w-[280px] mx-auto md:mx-0">
-              Small-batch Australian honey. Raw, unfiltered, and full of natural goodness.
+              Proudly bringing you {HONEY_INFO.name} &mdash; {HONEY_INFO.type.toLowerCase()}, direct from a family farm near Tamworth, NSW.
             </p>
           </div>
 
@@ -56,13 +56,13 @@ export default function Footer() {
               href={BUSINESS.phoneHref}
               className="block font-sans text-[0.95rem] font-semibold text-honey transition-colors duration-200 hover:text-honey-light mb-2"
             >
-              {"\u{1F4DE}"} {BUSINESS.phone}
+              {"\u{1F4AC}"} SMS {BUSINESS.phone}
             </a>
             <p className="font-sans text-[0.82rem] text-white-warm/40">
-              {"\u{1F4CD}"} {BUSINESS.location}
+              {"\u{1F4CD}"} Pickup: {BUSINESS.location}
             </p>
             <p className="font-sans text-[0.78rem] text-white-warm/30 mt-1">
-              Text us to arrange pickup
+              {"\u{1F33E}"} Farm: {BUSINESS.farmLocation}
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} {BUSINESS.name}. All rights reserved.
           </div>
           <div className="font-sans text-[0.75rem] text-white-warm/30">
-            Pure Australian Honey &middot; {BUSINESS.location}
+            {HONEY_INFO.name} &middot; {HONEY_INFO.certification}
           </div>
         </div>
       </div>

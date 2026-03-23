@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
-import { HERO_COPY, PRODUCTS } from "@/lib/content";
+import { HERO_COPY, PRODUCTS, IMAGES } from "@/lib/content";
 
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 28 },
@@ -27,19 +28,18 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
         >
-          {/* Main honey jar visual */}
+          {/* Main honey tubs image */}
           <div className="w-[280px] h-[340px] md:w-[420px] md:h-[520px] rounded-[220px_220px_180px_180px] overflow-hidden relative golden-glow border-4 border-honey/30">
-            <div className="w-full h-full bg-gradient-to-br from-honey-light via-honey to-amber flex flex-col items-center justify-center text-white-warm/90 font-display text-center p-8 relative">
-              {/* Honey swirl decorative element */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_20%,rgba(255,255,255,0.25)_0%,transparent_50%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_80%,rgba(58,34,16,0.15)_0%,transparent_40%)]" />
-              <span className="text-[5rem] mb-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.2)] relative z-10 animate-float">
-                {"\u{1F36F}"}
-              </span>
-              <p className="text-[0.85rem] font-sans opacity-60 italic relative z-10">
-                Your honey awaits
-              </p>
-            </div>
+            <Image
+              src={IMAGES.tubs}
+              alt="Stacks of fresh Sandy Hills Honey tubs, pure raw eucalyptus honey from Tamworth NSW"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 280px, 420px"
+              priority
+            />
+            {/* Warm overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-brown/20 via-transparent to-honey/10" />
           </div>
 
           {/* Floating badge — availability */}
@@ -73,7 +73,7 @@ export default function Hero() {
             per tub
           </motion.div>
 
-          {/* Small floating honeycomb */}
+          {/* Small floating bee */}
           <motion.div
             className="absolute -top-3 left-10 lg:top-[20px] lg:left-[-20px] text-3xl opacity-40"
             animate={{ y: [0, -8, 0], rotate: [0, 5, 0] }}
@@ -111,7 +111,7 @@ export default function Hero() {
 
         <motion.p
           {...fadeUp(0.4)}
-          className="text-[1.05rem] leading-[1.75] text-text-soft max-w-[460px] mb-11 mx-auto lg:mx-0"
+          className="text-[1.05rem] leading-[1.75] text-text-soft max-w-[500px] mb-11 mx-auto lg:mx-0"
         >
           {HERO_COPY.subtitle}
         </motion.p>
@@ -124,21 +124,21 @@ export default function Hero() {
             Get Your Tub
           </Button>
           <Button variant="secondary" href="#about">
-            Our Story
+            The Honey
           </Button>
         </motion.div>
 
-        {/* Social proof hint */}
+        {/* Farm origin hint */}
         <motion.p
           {...fadeUp(0.7)}
           className="mt-8 font-sans text-[0.8rem] text-text-soft/70 flex items-center gap-2 justify-center lg:justify-start"
         >
           <span className="flex -space-x-1">
-            <span className="w-6 h-6 rounded-full bg-honey/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u2764\uFE0F"}</span>
-            <span className="w-6 h-6 rounded-full bg-amber/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u{1F36F}"}</span>
-            <span className="w-6 h-6 rounded-full bg-brown-light/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u2B50"}</span>
+            <span className="w-6 h-6 rounded-full bg-honey/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u{1F1E6}\u{1F1FA}"}</span>
+            <span className="w-6 h-6 rounded-full bg-amber/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u{1F41D}"}</span>
+            <span className="w-6 h-6 rounded-full bg-brown-light/60 border-2 border-cream flex items-center justify-center text-[0.6rem]">{"\u{270B}"}</span>
           </span>
-          Loved by families across Western Sydney
+          Handmade on a family farm for 60+ years
         </motion.p>
       </div>
     </section>

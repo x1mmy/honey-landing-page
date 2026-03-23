@@ -33,7 +33,6 @@ export default function Payment() {
       >
         {/* Cash Card */}
         <div className="bg-white-warm rounded-3xl p-10 shadow-warm border border-amber/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-warm-lg group relative overflow-hidden">
-          {/* Subtle glow on hover */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,192,64,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
           <span className="text-[2.8rem] block mb-4 transition-transform duration-300 group-hover:scale-110 relative z-[1]">

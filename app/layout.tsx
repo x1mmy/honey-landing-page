@@ -5,24 +5,30 @@ import "./globals.css";
 const SITE_URL = "https://hiveandharvesthoney.com.au";
 
 export const metadata: Metadata = {
-  title: "Hive & Harvest | Pure Raw Australian Honey | Merrylands NSW",
+  title: "Hive & Harvest | Sandy Hills Raw Eucalyptus Honey | Merrylands NSW",
   description:
-    "Taste the difference real honey makes. Small-batch, raw, unfiltered Australian honey with zero preservatives. 1 tub $30, 2 tubs $50. Pickup in Merrylands, Western Sydney.",
+    "Sandy Hills Honey — pure raw eucalyptus honey, cold extracted and hand poured from a 965-acre family farm near Tamworth NSW. No additives, no preservatives, no chemicals. Handmade for 60+ years. 1 tub $30, 2 tubs $50. Pickup in Merrylands, Western Sydney.",
   keywords: [
+    "Sandy Hills Honey",
     "raw honey",
+    "eucalyptus honey",
     "Australian honey",
     "pure honey",
     "organic honey",
     "Merrylands honey",
+    "Tamworth honey",
     "Western Sydney honey",
-    "unfiltered honey",
+    "cold extracted honey",
+    "hand poured honey",
+    "raw unfiltered honey",
     "preservative free honey",
-    "local honey NSW",
-    "raw unfiltered honey Sydney",
+    "no chemicals honey",
     "buy honey near me",
     "natural honey Australia",
     "small batch honey",
     "Hive and Harvest",
+    "bush honey NSW",
+    "unadulterated honey",
   ],
   authors: [{ name: "Hive & Harvest" }],
   creator: "Hive & Harvest",
@@ -32,9 +38,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Hive & Harvest | Pure Raw Australian Honey",
+    title: "Hive & Harvest | Sandy Hills Pure Raw Eucalyptus Honey",
     description:
-      "Small-batch, raw, unfiltered honey from Australian farms. No preservatives, no additives. Pickup in Merrylands, NSW. From $30 per tub.",
+      "Cold extracted, hand poured eucalyptus honey from a 965-acre family farm near Tamworth NSW. No additives, no preservatives, no heat treatment. Handmade for 60+ years. Pickup in Merrylands.",
     url: SITE_URL,
     siteName: "Hive & Harvest",
     locale: "en_AU",
@@ -42,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hive & Harvest | Pure Raw Australian Honey",
+    title: "Hive & Harvest | Sandy Hills Raw Eucalyptus Honey",
     description:
-      "Small-batch, raw, unfiltered honey from Aussie farms. Zero preservatives. Pickup in Merrylands NSW.",
+      "Pure raw eucalyptus honey from a Tamworth family farm. Cold extracted, hand poured, zero chemicals. Pickup in Merrylands NSW.",
   },
   robots: {
     index: true,
@@ -69,19 +75,14 @@ const jsonLd = {
       "@id": `${SITE_URL}/#business`,
       name: "Hive & Harvest",
       description:
-        "Small-batch, raw, unfiltered Australian honey. Locally sourced from Aussie farms with zero preservatives or additives.",
+        "Sandy Hills Honey — pure raw eucalyptus honey, cold extracted and hand poured from a 965-acre family farm 45km south-east of Tamworth in North West NSW. No additives, no preservatives, no heat treatment, no chemicals, no sugar fed to bees. Handmade by hand the same way the family has done for over 60 years.",
       url: SITE_URL,
-      telephone: "+61493324958",
+      telephone: "+61432806679",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Merrylands",
         addressRegion: "NSW",
         addressCountry: "AU",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: -33.8333,
-        longitude: 150.9833,
       },
       priceRange: "$30-$50",
       currenciesAccepted: "AUD",
@@ -92,16 +93,24 @@ const jsonLd = {
       },
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "Honey Products",
+        name: "Sandy Hills Honey Products",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Product",
-              name: "Raw Australian Honey - 1 Tub",
+              name: "Sandy Hills Raw Eucalyptus Honey - 1 Tub",
               description:
-                "Thick, golden, raw Australian honey. Preservative-free and unfiltered.",
+                "Pure raw eucalyptus honey, cold extracted and hand poured from a 965-acre family farm near Tamworth NSW. No additives, no preservatives, no heat treatment, no chemicals.",
               category: "Honey",
+              brand: {
+                "@type": "Brand",
+                name: "Sandy Hills Honey",
+              },
+              countryOfOrigin: {
+                "@type": "Country",
+                name: "Australia",
+              },
             },
             price: "30.00",
             priceCurrency: "AUD",
@@ -111,10 +120,18 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Product",
-              name: "Raw Australian Honey - 2 Tubs",
+              name: "Sandy Hills Raw Eucalyptus Honey - 2 Tubs",
               description:
-                "Two tubs of raw Australian honey. Save $10 when you buy two.",
+                "Two tubs of pure raw eucalyptus honey. Save $10 when you buy two. Cold extracted, hand poured, unadulterated.",
               category: "Honey",
+              brand: {
+                "@type": "Brand",
+                name: "Sandy Hills Honey",
+              },
+              countryOfOrigin: {
+                "@type": "Country",
+                name: "Australia",
+              },
             },
             price: "50.00",
             priceCurrency: "AUD",
@@ -130,7 +147,7 @@ const jsonLd = {
       url: SITE_URL,
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+61493324958",
+        telephone: "+61432806679",
         contactType: "sales",
         areaServed: "AU",
         availableLanguage: "English",
@@ -140,7 +157,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
-      name: "Hive & Harvest",
+      name: "Hive & Harvest — Sandy Hills Honey",
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },

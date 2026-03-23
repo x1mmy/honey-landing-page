@@ -41,13 +41,17 @@ export default function Contact() {
           <a
             href={BUSINESS.phoneHref}
             className="relative inline-block font-display text-[2.4rem] font-bold text-gradient-honey transition-all duration-300 hover:scale-105"
-            aria-label={`Call or text ${BUSINESS.phone} to order honey`}
+            aria-label={`SMS ${BUSINESS.phone} to order Sandy Hills Honey`}
           >
             {BUSINESS.phone}
           </a>
         </div>
 
-        <p className="mt-5 font-sans text-[0.83rem] text-text-soft">
+        <p className="mt-2 font-sans text-[0.75rem] text-amber font-medium uppercase tracking-wider">
+          Send us an SMS
+        </p>
+
+        <p className="mt-4 font-sans text-[0.83rem] text-text-soft">
           {CONTACT_COPY.note}
         </p>
 
@@ -64,7 +68,7 @@ export default function Contact() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-6 font-sans text-[0.78rem] text-amber font-medium italic"
         >
-          Limited batches &mdash; once they&apos;re gone, they&apos;re gone
+          Limited batches direct from the farm &mdash; once they&apos;re gone, they&apos;re gone
         </motion.p>
       </motion.div>
     </section>
