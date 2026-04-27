@@ -37,11 +37,11 @@ export default function Contact() {
 
         {/* Phone CTA with golden glow */}
         <div className="relative inline-block">
-          <div className="absolute -inset-4 bg-[radial-gradient(circle,rgba(245,192,64,0.2)_0%,transparent_70%)] rounded-full pointer-events-none" />
+          <div className="absolute -inset-4 bg-[radial-gradient(circle,rgba(245,192,64,0.22)_0%,transparent_72%)] rounded-full pointer-events-none" />
           <a
             href={BUSINESS.phoneHref}
-            className="relative inline-block font-display text-[2.4rem] font-bold text-gradient-honey transition-all duration-300 hover:scale-105"
-            aria-label={`SMS ${BUSINESS.phone} to order Sandy Hills Honey`}
+            className="relative inline-block font-display text-[clamp(2.25rem,5.8vw,3.4rem)] font-bold tracking-[0.03em] text-brown bg-white-warm/65 px-5 py-2 rounded-2xl border border-amber/20 shadow-[0_8px_30px_rgba(58,34,16,0.08)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_10px_35px_rgba(58,34,16,0.14)]"
+            aria-label={`Call or text ${BUSINESS.phone} to order honey`}
           >
             {BUSINESS.phone}
           </a>

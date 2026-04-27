@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import SectionLabel from "@/components/ui/SectionLabel";
-import { BUSINESS, PAYMENT_COPY } from "@/lib/content";
+import { PAYMENT_COPY } from "@/lib/content";
 
 const reveal = {
   initial: { opacity: 0, y: 30 },
@@ -29,7 +29,7 @@ export default function Payment() {
 
       <motion.div
         {...reveal}
-        className="grid grid-cols-1 md:grid-cols-2 gap-7 relative z-[1]"
+        className="grid grid-cols-1 gap-7 relative z-[1] max-w-[560px] mx-auto"
       >
         {/* Cash Card */}
         <div className="bg-white-warm rounded-3xl p-10 shadow-warm border border-amber/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-warm-lg group relative overflow-hidden">
@@ -47,41 +47,6 @@ export default function Payment() {
           <p className="text-[0.92rem] leading-[1.75] text-text-soft relative z-[1]">
             {PAYMENT_COPY.cash.body}
           </p>
-        </div>
-
-        {/* Bank Transfer Card */}
-        <div className="bg-white-warm rounded-3xl p-10 shadow-warm border border-amber/10 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-warm-lg group relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(245,192,64,0.08)_0%,transparent_60%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-          <span className="text-[2.8rem] block mb-4 transition-transform duration-300 group-hover:scale-110 relative z-[1]">
-            {"\u{1F3E6}"}
-          </span>
-          <div className="font-display text-[1.4rem] font-semibold text-brown mb-2 relative z-[1]">
-            {PAYMENT_COPY.bank.title}
-          </div>
-          <p className="text-[0.92rem] leading-[1.75] text-text-soft relative z-[1]">
-            {PAYMENT_COPY.bank.body}
-          </p>
-
-          <div className="space-y-2.5 mt-5 relative z-[1]">
-            {[
-              { label: "BSB", value: BUSINESS.bsb },
-              { label: "Account Number", value: BUSINESS.accountNumber },
-              { label: "Reference", value: BUSINESS.paymentReference },
-            ].map((detail) => (
-              <div
-                key={detail.label}
-                className="bg-cream rounded-xl px-5 py-4 font-sans border border-amber/[0.08] transition-all duration-200 hover:border-amber/20"
-              >
-                <span className="text-[0.72rem] font-medium text-amber tracking-[0.08em] uppercase block mb-0.5">
-                  {detail.label}
-                </span>
-                <div className="font-semibold text-base text-brown tracking-wide">
-                  {detail.value}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </motion.div>
     </section>
